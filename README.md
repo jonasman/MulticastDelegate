@@ -19,8 +19,6 @@ Example
     protocol TestDelegate {
 	
 	    func doThis()
-	    func doThis(value:Int)
-	
     }
 
     class DelegateTestClass: TestDelegate {
