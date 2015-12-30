@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MulticastDelegateDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzH-8u-voo">
+                                <rect key="frame" x="269.5" y="57" width="61" height="30"/>
+                                <state key="normal" title="Get Data"/>
+                                <connections>
+                                    <action selector="getDataTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mD6-U1-CDX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I30-A3-uBv">
+                                <rect key="frame" x="279" y="123" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ft-BG-tEO">
+                                <rect key="frame" x="20" y="193" width="560" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="myh-1V-aam"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="goU-7l-tB1" kind="embed" id="jOc-SP-xlW"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7ft-BG-tEO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cng-HO-quY"/>
+                            <constraint firstItem="7ft-BG-tEO" firstAttribute="top" secondItem="I30-A3-uBv" secondAttribute="bottom" constant="50" id="Drb-6J-JGj"/>
+                            <constraint firstItem="qzH-8u-voo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="HQo-UQ-W1k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7ft-BG-tEO" secondAttribute="trailing" id="K0e-rq-mbf"/>
+                            <constraint firstItem="qzH-8u-voo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NDt-lN-Y99"/>
+                            <constraint firstItem="I30-A3-uBv" firstAttribute="top" secondItem="qzH-8u-voo" secondAttribute="bottom" constant="36" id="k4i-7Z-d6O"/>
+                            <constraint firstItem="I30-A3-uBv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="smU-vo-g2e"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="topLabel" destination="I30-A3-uBv" id="Deq-yx-6eg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="280" y="307"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="9Cp-Ci-hQo">
+            <objects>
+                <viewController id="goU-7l-tB1" customClass="ContainerViewController" customModule="MulticastDelegateDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GiG-73-xyO">
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6Y-EI-24X">
+                                <rect key="frame" x="259" y="39" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.82352941180000006" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l6Y-EI-24X" firstAttribute="centerX" secondItem="GiG-73-xyO" secondAttribute="centerX" id="3vK-GN-UgX"/>
+                            <constraint firstItem="l6Y-EI-24X" firstAttribute="centerY" secondItem="GiG-73-xyO" secondAttribute="centerY" id="erF-tt-f6b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="l6Y-EI-24X" id="4mq-Hb-fNS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xc6-a2-2DE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="797"/>
         </scene>
     </scenes>
 </document>

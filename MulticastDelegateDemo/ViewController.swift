@@ -8,18 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DemoServiceDelegate {
 
+	@IBOutlet weak var topLabel: UILabel!
+	@IBOutlet weak var bottomLabel: UILabel!
+	
+	let dataService = DemoService.defaultService
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+	
+		dataService.delegate += self
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	@IBAction func getDataTapped(sender: AnyObject) {
+		dataService.getData("TestingMulticast")
 	}
 
-
+	
+	//MARK: DemoServiceDelegate
+	func gotYourData(value:String) {
+		topLabel.text = value
+	}
+	
+	
 }
 
