@@ -9,7 +9,7 @@
 import Foundation
 
 
-class MulticastDelegate<T> {
+public class MulticastDelegate<T> {
 	
 	private var delegates = NSHashTable.weakObjectsHashTable()
 	
@@ -30,20 +30,20 @@ class MulticastDelegate<T> {
 	}
 }
 
-func +=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
+public func +=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
 	
 	left.addDelegate(right)
 	return left
 }
 
-func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
+public func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
 	
 	left.removeDelegate(right)
 	return left
 }
 
 infix operator |> { associativity left precedence 130 }
-func |><T>(left: MulticastDelegate<T>, right: (T) -> ()) -> MulticastDelegate<T> {
+public func |><T>(left: MulticastDelegate<T>, right: (T) -> ()) -> MulticastDelegate<T> {
 	
 	left.invokeDelegates(right)
 	return left
