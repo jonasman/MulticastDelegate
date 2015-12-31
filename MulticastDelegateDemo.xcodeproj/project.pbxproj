@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF010C431C3549E7001E396D /* MulticastDelegateSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MulticastDelegateSwift.podspec; sourceTree = SOURCE_ROOT; };
 		CF59E1CD1C318EAE002CB071 /* MulticastDelegateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MulticastDelegateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF59E1D01C318EAE002CB071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF59E1D21C318EAE002CB071 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 				CF59E1D71C318EAE002CB071 /* Assets.xcassets */,
 				CF59E1D91C318EAE002CB071 /* LaunchScreen.storyboard */,
 				CF59E1DC1C318EAE002CB071 /* Info.plist */,
+				CF010C431C3549E7001E396D /* MulticastDelegateSwift.podspec */,
 			);
 			path = MulticastDelegateDemo;
 			sourceTree = "<group>";
@@ -410,6 +412,7 @@
 				CF59E1EC1C318EAE002CB071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF59E1ED1C318EAE002CB071 /* Build configuration list for PBXNativeTarget "MulticastDelegateDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +421,7 @@
 				CF59E1EF1C318EAE002CB071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
