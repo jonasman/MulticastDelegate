@@ -13,16 +13,16 @@ public class MulticastDelegate<T> {
 	
 	private var delegates = NSHashTable.weakObjectsHashTable()
 	
-	func addDelegate(delegate: T) {
+	public func addDelegate(delegate: T) {
 		guard delegate is AnyObject else { return }
 		delegates.addObject((delegate as! AnyObject))
 	}
-	func removeDelegate(delegate: T) {
+	public func removeDelegate(delegate: T) {
 		guard delegate is AnyObject else { return }
 		delegates.removeObject((delegate as! AnyObject))
 	}
 	
-	func invokeDelegates(invocation: (T) -> ()) {
+	public func invokeDelegates(invocation: (T) -> ()) {
 		
 		for delegate in delegates.allObjects {
 			invocation(delegate as! T)
