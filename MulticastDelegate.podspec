@@ -7,7 +7,8 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/jonasman/MulticastDelegate'
   s.author   = { 'Joao Nunes' => 'joao3001@hotmail.com' }
 
-  s.source   = { :git => 'https://github.com/jonasman/MulticastDelegate.git'}
+  s.source   = { :git => 'https://github.com/jonasman/MulticastDelegate.git',
+		:tag => '1.0.0' }
 
   s.description  = 'Multicast Delegate made for swift language.'
   s.source_files = 'MulticastDelegate/MulticastDelegate.swift'
