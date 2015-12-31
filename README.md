@@ -1,21 +1,22 @@
 # MulticastDelegate
 An elegant multicast delegate written in swift with Unit tests
 
-Getting Started 
+Installation
 ============
 
-Manual install:
+Manual:
 
 Copy `MulticastDelegate.swift` to your project
 
-If you are using cocoaPods:
+CocoaPods:
 
 	pod 'MulticastDelegateSwift'
 Import the module:
 
 	import MulticastDelegateSwift
 
-
+Usage
+============
 1. Add to your class: `let multicastDelegate = MulticastDelegate<MyProtocol>()`
 2. Other classes must add as a delegate: `service.delegate.addDelegate(self)`
 3. When you need to notify your delegates: `multicastDelegate.invokeDelegates { delegate in delegate.done() }`
@@ -76,7 +77,9 @@ Operators
 There are 3 operators to simplify the multicast usage
 
 `+=` calls addDelegate(delegate: T)
+
 `-=` calls removeDelegate(delegate: T)
+
 `|>` calls invokeDelegates(invocation: (T) -> ())
 
 
