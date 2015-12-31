@@ -13,6 +13,8 @@ public class MulticastDelegate<T> {
 	
 	private var delegates = NSHashTable.weakObjectsHashTable()
 	
+	public init() {}
+	
 	public func addDelegate(delegate: T) {
 		guard delegate is AnyObject else { return }
 		delegates.addObject((delegate as! AnyObject))
