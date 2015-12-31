@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.platform = :ios, '8.0'
   s.license  = { :type => 'MIT'}
   s.summary  = 'Swift Multicast Delegate'
-  s.homepage = 'https://github.com/jonasma/MulticastDelegate'
+  s.homepage = 'https://github.com/jonasman/MulticastDelegate'
   s.author   = { 'Joao Nunes' => 'joao3001@hotmail.com' }
 
   s.source   = { :git => 'https://github.com/jonasman/MulticastDelegate.git'}
