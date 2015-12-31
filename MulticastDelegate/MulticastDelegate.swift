@@ -22,10 +22,10 @@ class MulticastDelegate<T> {
 		delegates.removeObject((delegate as! AnyObject))
 	}
 	
-	func invokeDelegates(invocation: (T?) -> ()) {
+	func invokeDelegates(invocation: (T) -> ()) {
 		
 		for delegate in delegates.allObjects {
-			invocation(delegate as? T)
+			invocation(delegate as! T)
 		}
 	}
 }
@@ -43,7 +43,7 @@ func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
 }
 
 infix operator |> { associativity left precedence 130 }
-func |><T>(left: MulticastDelegate<T>, right: (T?) -> ()) -> MulticastDelegate<T> {
+func |><T>(left: MulticastDelegate<T>, right: (T) -> ()) -> MulticastDelegate<T> {
 	
 	left.invokeDelegates(right)
 	return left

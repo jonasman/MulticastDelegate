@@ -26,7 +26,7 @@ class DemoService {
 			
 			self.delegate |> { delegate in
 				
-				delegate?.gotYourData(value)
+				delegate.gotYourData(value)
 				
 			}
 			

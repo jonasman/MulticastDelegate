@@ -24,7 +24,6 @@ class DelegateTestClass: TestDelegate {
 	func doThis(value:Int) {
 		print(value)
 	}
-	
 }
 
 
@@ -36,7 +35,7 @@ class ServiceTestClass {
 		
 		delegate |> { delegate in
 			
-			delegate?.doThis()
+			delegate.doThis()
 			
 		}
 
@@ -47,12 +46,10 @@ class ServiceTestClass {
 		
 		delegate.invokeDelegates { delegate in
 			
-			delegate?.doThis(1)
+			delegate.doThis(1)
 			
 		}
 	}
-	
-	
 }
 
 
@@ -81,7 +78,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 		var delegatesCalled = 0
 		multicastDelegate |> { delegate in
 			
-			delegate?.doThis()
+			delegate.doThis()
 			
 			delegatesCalled += 1
 			
@@ -106,7 +103,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			delegatesCalled += 1
 			
-			delegate?.doThis(delegatesCalled)
+			delegate.doThis(delegatesCalled)
 		}
 		
 		XCTAssert(delegatesCalled == 2,"Must be 2")
@@ -118,7 +115,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			delegatesCalled += 1
 			
-			delegate?.doThis(delegatesCalled)
+			delegate.doThis(delegatesCalled)
 		}
 		XCTAssert(delegatesCalled == 0,"Must be 0")
 		
@@ -157,7 +154,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			delegatesCalled += 1
 			
-			delegate?.doThis(delegatesCalled)
+			delegate.doThis(delegatesCalled)
 		}
 		
 		XCTAssert(delegatesCalled == 0,"Must be 0")
@@ -176,7 +173,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			multicastDelegate |> { delegate in
 				
-				delegate?.doThis()
+				delegate.doThis()
 				
 				delegatesCalled += 1
 				
@@ -190,9 +187,9 @@ class MulticastDelegateDemoTests: XCTestCase {
 		delegatesCalled = 0
 		multicastDelegate |> { delegate in
 			
-			delegate?.doThis()
+			delegate.doThis()
 			
-			delegatesCalled += delegate != nil ? 1 : 0
+			delegatesCalled += 1
 			
 		}
 		
