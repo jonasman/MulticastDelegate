@@ -12,6 +12,8 @@ Getting Started
 If you are using cocoaPods:
 
 	pod 'MulticastDelegateSwift'
+Add to your code:
+
 	import MulticastDelegateSwift
 
 Example
