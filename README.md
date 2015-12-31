@@ -11,7 +11,7 @@ Getting Started
 
 If you are using cocoaPods:
 
-	pod 'MulticastDelegate', :git => 'https://github.com/jonasman/MulticastDelegate.git'
+	pod 'MulticastDelegateSwift'
 
 Example
 ===========
