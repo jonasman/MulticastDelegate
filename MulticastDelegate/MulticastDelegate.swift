@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- *  `MulticastDelegate` lets you easily create a "multicast delegate" for a given protocol.
+ *  `MulticastDelegate` lets you easily create a "multicast delegate" for a given protocol or class.
  */
 public class MulticastDelegate<T> {
 	
