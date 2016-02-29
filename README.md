@@ -12,10 +12,6 @@ Copy `MulticastDelegate.swift` to your project
 ```ruby
 	pod 'MulticastDelegateSwift'
 ```
-Import the module
-```swift
-	import MulticastDelegateSwift
-```	
 ####Swift Package Manager
 You can use [Swift Package Manager](https://swift.org/package-manager/) and specify a dependency in `Package.swift` by adding this:
 ```swift
@@ -24,6 +20,11 @@ You can use [Swift Package Manager](https://swift.org/package-manager/) and spec
 
 Usage
 ============
+Import the module
+```swift
+	import MulticastDelegateSwift
+```
+
 1. Add to your class: `let multicastDelegate = MulticastDelegate<MyProtocol>()`
 2. Other classes must add as a delegate: `service.delegate.addDelegate(self)`
 3. When you need to notify your delegates: `multicastDelegate.invokeDelegates { delegate in delegate.done() }`
@@ -32,7 +33,7 @@ Alternative version:
 
 1. Add to your class: `let multicastDelegate = MulticastDelegate<MyProtocol>()`
 2. Other classes must add as a delegate: `service.delegate += self`
-3. When you need to notify your delegates: `multicastDelegate |> { delegate in delegate.done() }`
+3. When you need to notify your delegates: `multicastDelegate |> { $0.done() }`
 
 
 Example
