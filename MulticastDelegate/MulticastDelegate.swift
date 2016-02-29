@@ -21,6 +21,8 @@ public class MulticastDelegate<T> {
      *  Use this method to add a delelgate.
      *
      *  Alternatively, you can use the `+=` operator to add a delegate.
+     *
+     *  - parameter delegate:  The delegate to be added.
      */
 	public func addDelegate(delegate: T) {
 		guard delegate is AnyObject else { return }
@@ -31,6 +33,8 @@ public class MulticastDelegate<T> {
      *  Use this method to remove a previously-added delegate.
      *
      *  Alternatively, you can use the `-=` operator to add a delegate.
+     *
+     *  - parameter delegate:  The delegate to be removed.
      */
 	public func removeDelegate(delegate: T) {
 		guard delegate is AnyObject else { return }
@@ -41,6 +45,8 @@ public class MulticastDelegate<T> {
      *  Use this method to invoke a closure on each delegate.
      *
      *  Alternatively, you can use the `|>` operator to invoke a given closure on each delegate.
+     *
+     *  - parameter invocation: The closure to be invoked on each delegate.
      */
 	public func invokeDelegates(invocation: (T) -> ()) {
 		
@@ -54,6 +60,9 @@ public class MulticastDelegate<T> {
  *  Use this operator to add a delegate.
  *
  *  This is a convenience operator for calling `addDelegate`.
+ *
+ *  - parameter left:   The multicast delegate
+ *  - parameter right:  The delegate to be added
  */
 public func +=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
 	
@@ -65,6 +74,9 @@ public func +=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> 
  *  Use this operator to remove a delegate.
  *
  *  This is a convenience operator for calling `removeDelegate`.
+ *
+ *  - parameter left:   The multicast delegate
+ *  - parameter right:  The delegate to be removed
  */
 public func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
 	
@@ -76,6 +88,9 @@ public func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> 
  *  Use this operator invoke a closure on each delegate.
  *
  *  This is a convenience operator for calling `invokeDelegates`.
+ *
+ *  - parameter left:   The multicast delegate
+ *  - parameter right:  The closure to be invoked on each delegate
  */
 infix operator |> { associativity left precedence 130 }
 public func |><T>(left: MulticastDelegate<T>, right: (T) -> ()) -> MulticastDelegate<T> {
