@@ -4,16 +4,23 @@ An elegant multicast delegate written in swift with Unit tests
 Installation
 ============
 
-Manual:
+####Manual
 
 Copy `MulticastDelegate.swift` to your project
 
-CocoaPods:
-
+####CocoaPods
+```ruby
 	pod 'MulticastDelegateSwift'
-Import the module:
-
+```
+Import the module
+```swift
 	import MulticastDelegateSwift
+```	
+####Swift Package Manager
+You can use [Swift Package Manager](https://swift.org/package-manager/) and specify a dependency in `Package.swift` by adding this:
+```swift
+.Package(url: "https://github.com/jonasman/MulticastDelegate.git", majorVersion: 1)
+```
 
 Usage
 ============
