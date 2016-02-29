@@ -32,7 +32,7 @@ Alternative version:
 
 1. Add to your class: `let multicastDelegate = MulticastDelegate<MyProtocol>()`
 2. Other classes must add as a delegate: `service.delegate += self`
-3. When you need to notify your delegates: `multicastDelegate |> { delegate in delegate.done() }`
+3. When you need to notify your delegates: `multicastDelegate |> { $0.done() }`
 
 
 Example
