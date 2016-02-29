@@ -68,7 +68,7 @@
 		CF59E1C41C318EAE002CB071 = {
 			isa = PBXGroup;
 			children = (
-				CF59E1F01C318EB8002CB071 /* MulticastDelegate */,
+				CF59E1F01C318EB8002CB071 /* Sources */,
 				CF59E1CF1C318EAE002CB071 /* MulticastDelegateDemo */,
 				CF59E1E41C318EAE002CB071 /* MulticastDelegateDemoTests */,
 				CF59E1CE1C318EAE002CB071 /* Products */,
@@ -109,12 +109,12 @@
 			path = MulticastDelegateDemoTests;
 			sourceTree = "<group>";
 		};
-		CF59E1F01C318EB8002CB071 /* MulticastDelegate */ = {
+		CF59E1F01C318EB8002CB071 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */,
 			);
-			path = MulticastDelegate;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
