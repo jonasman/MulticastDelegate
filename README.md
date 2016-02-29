@@ -31,30 +31,20 @@ Alternative version:
 Example
 ===========
 
-    protocol TestDelegate {
-	
-	    func doThis()
+    protocol ServiceDelegate {
+	    func serviceGotData()
     }
 
-    class DelegateTestClass: TestDelegate {
-	
-	    func doThis() {
-	    	// do nothing
-    	}
-    	func doThis(value:Int) {
-	    	print(value)
-	    }
-    }
-
-    class ServiceTestClass {
+    class Service {
 	
     	var delegate = MulticastDelegate<TestDelegate>()
 	
-	    func imReady() -> Bool {
+	    func fetchData() -> Bool {
+	    	// fetch Data and notify your delegates
 		    // Call your delegates 
 	    	delegate |> { delegate in
 			
-		    	delegate.doThis()
+		    	delegate.serviceGotData()
 			
 	    	}
 
@@ -62,14 +52,22 @@ Example
     	}
     }
 
+    class MainViewController: UIViewController, TestDelegate {
+	
+		func serviceGotData() {
+	    	// do nothing
+    	}
+    	func serviceGotData(value:Int) {
+	    	print(value)
+		}
+    }
 
-
-    let service = ServiceTestClass()
-	let demoDelegateClass = DelegateTestClass()
+    let service = Service()
+	let viewController = MainViewController()
 		
-	service.delegate += demoDelegateClass
+	service.delegate += viewController
 		
-	service.imReady()
+	service.fetchData()
     
 
 Operators
