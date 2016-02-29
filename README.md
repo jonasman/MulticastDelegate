@@ -30,45 +30,44 @@ Alternative version:
 
 Example
 ===========
+```swift
+protocol ServiceDelegate {
+	func serviceGotData()
+}
 
-    protocol ServiceDelegate {
-	    func serviceGotData()
-    }
-
-    class Service {
+class Service {
 	
-    	var delegate = MulticastDelegate<TestDelegate>()
+	var delegate = MulticastDelegate<TestDelegate>()
 	
-	    func fetchData() -> Bool {
-	    	// fetch Data and notify your delegates
-		    // Call your delegates 
-	    	delegate |> { delegate in
-			
-		    	delegate.serviceGotData()
-			
-	    	}
-
-		    return true
-    	}
-    }
-
-    class MainViewController: UIViewController, TestDelegate {
-	
-		func serviceGotData() {
-	    	// do nothing
-    	}
-    	func serviceGotData(value:Int) {
-	    	print(value)
+	func fetchData() -> Bool {
+		// fetch Data and notify your delegates
+		// Call your delegates 
+		delegate |> { delegate in
+			delegate.serviceGotData()
 		}
-    }
-
-    let service = Service()
-	let viewController = MainViewController()
+		return true
+	}
+}
+```    
+```swift
+class MainViewController: UIViewController, TestDelegate {
+	
+	func serviceGotData() {
+	    	// do nothing
+	}
+	func serviceGotData(value:Int) {
+		print(value)
+	}
+}
+```
+```swift
+let service = Service()
+let viewController = MainViewController()
 		
-	service.delegate += viewController
+service.delegate += viewController
 		
-	service.fetchData()
-    
+service.fetchData()
+```    
 
 Operators
 ============
