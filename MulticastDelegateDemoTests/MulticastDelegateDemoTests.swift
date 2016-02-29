@@ -203,7 +203,7 @@ class MulticastDelegateDemoTests: XCTestCase {
         let myStruct = TestStruct()
         multicastDelegate += myStruct   // isn't actually allowed
     
-        multicastDelegate.containsDelegate(myStruct)
+        XCTAssertFalse(multicastDelegate.containsDelegate(myStruct))
     }
     
     func testContainsDelegatePreviouslyAddedDelegateReturnsTrue() {
