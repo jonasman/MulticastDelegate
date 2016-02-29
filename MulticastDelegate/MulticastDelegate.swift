@@ -54,6 +54,16 @@ public class MulticastDelegate<T> {
 			invocation(delegate as! T)
 		}
 	}
+    
+    /**
+     *  Use this method to determine if the multicast delegate contains a given delegate.
+     *
+     *  - parameter delegate:   The given delegate to check if it's contained
+     */
+    public func containsDelegate(delegate: T) -> Bool {
+        guard delegate is AnyObject else { return false }
+        return delegates.containsObject((delegate as! AnyObject))
+    }
 }
 
 /**

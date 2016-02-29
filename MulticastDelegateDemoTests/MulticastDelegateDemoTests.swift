@@ -52,6 +52,16 @@ class ServiceTestClass {
 	}
 }
 
+struct TestStruct: TestDelegate {
+    
+    func doThis() {
+        // do nothing
+    }
+    
+    func doThis(value:Int) {
+        print(value)
+    }
+}
 
 
 class MulticastDelegateDemoTests: XCTestCase {
@@ -134,18 +144,8 @@ class MulticastDelegateDemoTests: XCTestCase {
 	
 	func testStructNotAccepted() {
 		
-		struct testStruct:TestDelegate {
-		
-			func doThis() {
-				// do nothing
-			}
-			func doThis(value:Int) {
-				print(value)
-			}
-		}
-		
 		let multicastDelegate = MulticastDelegate<TestDelegate>()
-		let myStruct = testStruct()
+		let myStruct = TestStruct()
 		
 		multicastDelegate += myStruct
 		
@@ -198,6 +198,29 @@ class MulticastDelegateDemoTests: XCTestCase {
 		
 	}
 	
-
+    func testContainsDelegateStructReturnsFalse() {
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        let myStruct = TestStruct()
+        multicastDelegate += myStruct   // isn't actually allowed
+    
+        multicastDelegate.containsDelegate(myStruct)
+    }
+    
+    func testContainsDelegatePreviouslyAddedDelegateReturnsTrue() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        let delegate = DelegateTestClass()
+        multicastDelegate += delegate
+        
+        XCTAssertTrue(multicastDelegate.containsDelegate(delegate))
+    }
+    
+    func testContainsDelegateNeverAddedDelegateReturnsFalse() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        let delegate = DelegateTestClass()
+        
+        XCTAssertFalse(multicastDelegate.containsDelegate(delegate))
+    }
     
 }
