@@ -1,0 +1,7 @@
+language: objective-c  
+osx_image: xcode7.2
+xcode_project: MulticastDelegateDemo.xcodeproj 
+xcode_scheme: MulticastDelegateDemo
+xcode_sdk: iphonesimulator9.2
+notifications:
+  email: false
