@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/jonasman/MulticastDelegate.svg?branch=master)](https://travis-ci.org/jonasman/MulticastDelegate)
+[![MulticastDelegate](https://img.shields.io/cocoapods/v/MulticastDelegateSwift.svg)]()
 # MulticastDelegate
 An elegant multicast delegate written in swift with Unit tests
 
