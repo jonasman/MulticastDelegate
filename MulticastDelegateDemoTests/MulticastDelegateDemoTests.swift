@@ -52,6 +52,23 @@ class ServiceTestClass {
 	}
 }
 
+class CopyTestDelegate: NSObject, NSCopying{
+
+    var value:Int
+    
+    init(value:Int) {
+        self.value = value
+    }
+    
+    @objc func copyWithZone(zone:NSZone) -> AnyObject {
+        return CopyTestDelegate(value: value)
+    }
+}
+
+func ==(lhs: CopyTestDelegate, rhs: CopyTestDelegate) -> Bool {
+    return lhs.value == rhs.value
+}
+
 struct TestStruct: TestDelegate {
     
     func doThis() {
@@ -65,17 +82,65 @@ struct TestStruct: TestDelegate {
 
 
 class MulticastDelegateDemoTests: XCTestCase {
-	
-	
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+		
+    // MARK: - Object Lifecycle - Tests
+    
+    func testInitUsesWeakReferencesByDefault() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        
+        autoreleasepool {
+            let demoDelegateClass = DelegateTestClass()
+            multicastDelegate += demoDelegateClass
+        }
+        
+        var delegatesCalled = 0
+        multicastDelegate |> { _ in
+            delegatesCalled += 1
+        }
+        
+        XCTAssertEqual(delegatesCalled, 0)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testInitWithStrongReferencesUsesStrongDelegateStorage() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>(strongReferences: true)
+        
+        autoreleasepool {
+            let demoDelegateClass = DelegateTestClass()
+            multicastDelegate += demoDelegateClass
+        }
+        
+        var delegatesCalled = 0
+        multicastDelegate |> { _ in
+            delegatesCalled += 1
+        }
+        
+        XCTAssertEqual(delegatesCalled, 1)
     }
+    
+    func testInitWithOptionsUsesOptionsToSpecifyStorage() {
+        
+        let multicastDelegate = MulticastDelegate<CopyTestDelegate>(options: [.StrongMemory, .ObjectPersonality])
+        weak var weakDelegate: CopyTestDelegate?
+
+        autoreleasepool {
+            
+            let delegate = CopyTestDelegate(value: 42)
+            multicastDelegate += delegate
+            
+            weakDelegate = delegate
+        }
+        
+        guard let delegate = weakDelegate else {
+            XCTFail()
+            return
+        }
+
+        XCTAssertTrue(multicastDelegate.containsDelegate(delegate))
+    }
+    
+    // MARK: - Invoking Delegates - Tests
     
     func testMulticast() {
 		
