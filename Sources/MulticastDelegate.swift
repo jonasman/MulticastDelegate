@@ -13,9 +13,32 @@ import Foundation
  */
 public class MulticastDelegate<T> {
 	
-	private var delegates = NSHashTable.weakObjectsHashTable()
-	
-	public init() {}
+    /// The delegates hash table.
+    private var delegates: NSHashTable
+    
+    /**
+     *  Use this method to initialize a new `MulticastDelegate` specifying whether delegate references should be weak or
+     *  strong.
+     *
+     *  - parameter strongReferences: Whether delegates should be strongly referenced, false by default.
+     *
+     *  - returns: A new `MulticastDelegate` instance
+     */
+    public init(strongReferences: Bool = false) {
+        
+        delegates = strongReferences ? NSHashTable() : NSHashTable.weakObjectsHashTable()
+    }
+    
+    /**
+     *  Use this method to initialize a new `MulticastDelegate` specifying the storage options yourself.
+     *
+     *  - parameter options: The underlying storage options to use
+     *
+     *  - returns: A new `MulticastDelegate` instance
+     */
+    public init(options: NSPointerFunctionsOptions) {
+        delegates = NSHashTable(options: options, capacity: 0)
+    }
 	
     /**
      *  Use this method to add a delelgate.
@@ -59,6 +82,8 @@ public class MulticastDelegate<T> {
      *  Use this method to determine if the multicast delegate contains a given delegate.
      *
      *  - parameter delegate:   The given delegate to check if it's contained
+     *
+     *  - returns: `true` if the delegate is found or `false` otherwise
      */
     public func containsDelegate(delegate: T) -> Bool {
         guard delegate is AnyObject else { return false }
@@ -73,6 +98,8 @@ public class MulticastDelegate<T> {
  *
  *  - parameter left:   The multicast delegate
  *  - parameter right:  The delegate to be added
+ *
+ *  - returns: The `MulticastDelegate` instance with the `right` delegate parameter added
  */
 public func +=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
 	
@@ -87,6 +114,8 @@ public func +=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> 
  *
  *  - parameter left:   The multicast delegate
  *  - parameter right:  The delegate to be removed
+ *
+ *  - returns: The `MulticastDelegate` instance with the `right` delegate parameter removed
  */
 public func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> {
 	
@@ -101,6 +130,8 @@ public func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> 
  *
  *  - parameter left:   The multicast delegate
  *  - parameter right:  The closure to be invoked on each delegate
+ *
+ *  - returns: The `MulticastDelegate` after all its delegates have been invoked
  */
 infix operator |> { associativity left precedence 130 }
 public func |><T>(left: MulticastDelegate<T>, right: (T) -> ()) -> MulticastDelegate<T> {
