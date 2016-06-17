@@ -71,7 +71,7 @@ public class MulticastDelegate<T> {
      *
      *  - parameter invocation: The closure to be invoked on each delegate.
      */
-	public func invokeDelegates(invocation: (T) -> ()) {
+	public func invokeDelegates(@noescape invocation: (T) -> ()) {
 		
 		for delegate in delegates.allObjects {
 			invocation(delegate as! T)
@@ -134,7 +134,7 @@ public func -=<T>(left: MulticastDelegate<T>, right: T) -> MulticastDelegate<T> 
  *  - returns: The `MulticastDelegate` after all its delegates have been invoked
  */
 infix operator |> { associativity left precedence 130 }
-public func |><T>(left: MulticastDelegate<T>, right: (T) -> ()) -> MulticastDelegate<T> {
+public func |><T>(left: MulticastDelegate<T>, @noescape right: (T) -> ()) -> MulticastDelegate<T> {
 	
 	left.invokeDelegates(right)
 	return left
