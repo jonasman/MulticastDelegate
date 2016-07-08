@@ -6,4 +6,4 @@ xcode_sdk: iphonesimulator9.3
 notifications:
   email: false
 before_install:
- - brew uninstall xctool && brew install --HEAD xctool
+ - brew uninstall -force xctool && brew install --HEAD xctool
