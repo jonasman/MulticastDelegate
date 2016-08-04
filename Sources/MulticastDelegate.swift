@@ -128,8 +128,7 @@ public func -=<T>(left: MulticastDelegate<T>, right: T) {
  *  - returns: The `MulticastDelegate` after all its delegates have been invoked
  */
 infix operator |> { associativity left precedence 130 }
-public func |><T>(left: MulticastDelegate<T>, @noescape right: (T) -> ()) -> MulticastDelegate<T> {
+public func |><T>(left: MulticastDelegate<T>, @noescape right: (T) -> ()) {
 	
 	left.invokeDelegates(right)
-	return left
 }
