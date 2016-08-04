@@ -46,13 +46,13 @@ class ServiceTestClass {
 		
 		delegate.invokeDelegates { delegate in
 			
-			delegate.doThis(1)
+			delegate.doThis(value: 1)
 			
 		}
 	}
 }
 
-class CopyTestDelegate: NSObject, NSCopying{
+class CopyTestDelegate: NSObject, NSCopying {
 
     var value: Int
     
@@ -60,7 +60,7 @@ class CopyTestDelegate: NSObject, NSCopying{
         self.value = value
     }
     
-    @objc func copyWithZone(zone: NSZone) -> AnyObject {
+    @objc func copy(with: NSZone?) -> AnyObject {
         return CopyTestDelegate(value: value)
     }
 }
@@ -121,7 +121,7 @@ class MulticastDelegateDemoTests: XCTestCase {
     
     func testInitWithOptionsUsesOptionsToSpecifyStorage() {
         
-        let multicastDelegate = MulticastDelegate<CopyTestDelegate>(options: [.StrongMemory, .ObjectPersonality])
+        let multicastDelegate = MulticastDelegate<CopyTestDelegate>(options: [.strongMemory, .objectPersonality])
         weak var weakDelegate: CopyTestDelegate?
 
         autoreleasepool {
@@ -174,7 +174,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			delegatesCalled += 1
 			
-			delegate.doThis(delegatesCalled)
+			delegate.doThis(value: delegatesCalled)
 		}
 		
 		XCTAssert(delegatesCalled == 2,"Must be 2")
@@ -186,7 +186,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			delegatesCalled += 1
 			
-			delegate.doThis(delegatesCalled)
+			delegate.doThis(value: delegatesCalled)
 		}
 		XCTAssertEqual(delegatesCalled,0)
 		
@@ -215,7 +215,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			delegatesCalled += 1
 			
-			delegate.doThis(delegatesCalled)
+			delegate.doThis(value: delegatesCalled)
 		}
 		
 		XCTAssertEqual(delegatesCalled,0)
