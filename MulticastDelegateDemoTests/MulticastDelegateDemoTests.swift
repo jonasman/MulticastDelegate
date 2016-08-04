@@ -12,7 +12,7 @@ import XCTest
 protocol TestDelegate {
 	
 	func doThis()
-	func doThis(value:Int)
+	func doThis(value: Int)
 	
 }
 
@@ -21,7 +21,7 @@ class DelegateTestClass: TestDelegate {
 	func doThis() {
 		// do nothing
 	}
-	func doThis(value:Int) {
+	func doThis(value: Int) {
 		print(value)
 	}
 }
@@ -54,13 +54,13 @@ class ServiceTestClass {
 
 class CopyTestDelegate: NSObject, NSCopying{
 
-    var value:Int
+    var value: Int
     
-    init(value:Int) {
+    init(value: Int) {
         self.value = value
     }
     
-    @objc func copyWithZone(zone:NSZone) -> AnyObject {
+    @objc func copyWithZone(zone: NSZone) -> AnyObject {
         return CopyTestDelegate(value: value)
     }
 }
@@ -75,7 +75,7 @@ struct TestStruct: TestDelegate {
         // do nothing
     }
     
-    func doThis(value:Int) {
+    func doThis(value: Int) {
         print(value)
     }
 }
@@ -131,13 +131,9 @@ class MulticastDelegateDemoTests: XCTestCase {
             
             weakDelegate = delegate
         }
-        
-        guard let delegate = weakDelegate else {
-            XCTFail()
-            return
-        }
-
-        XCTAssertTrue(multicastDelegate.containsDelegate(delegate))
+		
+		XCTAssertNotNil(weakDelegate)
+        XCTAssertTrue(multicastDelegate.containsDelegate(weakDelegate!))
     }
     
     // MARK: - Invoking Delegates - Tests
@@ -159,7 +155,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 		}
 		
-		XCTAssert(delegatesCalled == 1,"Must be 1")
+		XCTAssertEqual(delegatesCalled,1)
 
     }
 	
@@ -192,7 +188,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			
 			delegate.doThis(delegatesCalled)
 		}
-		XCTAssert(delegatesCalled == 0,"Must be 0")
+		XCTAssertEqual(delegatesCalled,0)
 		
 	}
 	
@@ -203,7 +199,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 		
 		service.delegate += demoDelegateClass
 		
-		XCTAssert(service.imReady(),"Ready failed")
+		XCTAssertTrue(service.imReady(),"Ready failed")
 		
 	}
 	
@@ -222,7 +218,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 			delegate.doThis(delegatesCalled)
 		}
 		
-		XCTAssert(delegatesCalled == 0,"Must be 0")
+		XCTAssertEqual(delegatesCalled,0)
 		
 	}
 	
@@ -232,7 +228,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 		var delegatesCalled = 0
 		
 		autoreleasepool {
-			var demoDelegateClass:DelegateTestClass? = DelegateTestClass()
+			var demoDelegateClass: DelegateTestClass? = DelegateTestClass()
 			
 			multicastDelegate += demoDelegateClass!
 			
@@ -243,7 +239,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 				delegatesCalled += 1
 				
 			}
-			XCTAssert(delegatesCalled == 1,"Must be 1")
+			XCTAssertEqual(delegatesCalled,1)
 			
 			
 			demoDelegateClass = nil
@@ -259,7 +255,7 @@ class MulticastDelegateDemoTests: XCTestCase {
 		}
 		
 		
-		XCTAssert(delegatesCalled == 0,"Must be 0")
+		XCTAssertEqual(delegatesCalled,0)
 		
 	}
 	
