@@ -26,7 +26,7 @@ public class MulticastDelegate<T> {
      */
     public init(strongReferences: Bool = false) {
         
-        delegates = strongReferences ? NSHashTable() : NSHashTable.weakObjects()
+        delegates = strongReferences ? NSHashTable<AnyObject>() : NSHashTable<AnyObject>.weakObjects()
     }
     
     /**
@@ -48,8 +48,7 @@ public class MulticastDelegate<T> {
      *  - parameter delegate:  The delegate to be added.
      */
 	public func addDelegate(_ delegate: T) {
-		guard delegate is AnyObject else { return }
-		delegates.add((delegate as! AnyObject))
+		delegates.add(delegate as AnyObject)
 	}
     
     /**
@@ -60,8 +59,7 @@ public class MulticastDelegate<T> {
      *  - parameter delegate:  The delegate to be removed.
      */
 	public func removeDelegate(_ delegate: T) {
-		guard delegate is AnyObject else { return }
-		delegates.remove((delegate as! AnyObject))
+		delegates.remove(delegate as AnyObject)
 	}
 	
     /**
@@ -71,7 +69,7 @@ public class MulticastDelegate<T> {
      *
      *  - parameter invocation: The closure to be invoked on each delegate.
      */
-	public func invokeDelegates(_ invocation: @noescape (T) -> ()) {
+	public func invokeDelegates(_ invocation: (T) -> ()) {
 		
 		for delegate in delegates.allObjects {
 			invocation(delegate as! T)
@@ -86,8 +84,7 @@ public class MulticastDelegate<T> {
      *  - returns: `true` if the delegate is found or `false` otherwise
      */
     public func containsDelegate(_ delegate: T) -> Bool {
-        guard delegate is AnyObject else { return false }
-        return delegates.contains((delegate as! AnyObject))
+        return delegates.contains(delegate as AnyObject)
     }
 }
 
@@ -127,8 +124,12 @@ public func -=<T>(left: MulticastDelegate<T>, right: T) {
  *
  *  - returns: The `MulticastDelegate` after all its delegates have been invoked
  */
-infix operator |> { associativity left precedence 130 }
-public func |><T>(left: MulticastDelegate<T>, right: @noescape (T) -> ()) {
+precedencegroup MulticastPrecedence {
+	associativity: left
+	higherThan: TernaryPrecedence
+}
+infix operator |> : MulticastPrecedence
+public func |><T>(left: MulticastDelegate<T>, right: (T) -> ()) {
 	
 	left.invokeDelegates(right)
 }

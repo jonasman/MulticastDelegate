@@ -60,7 +60,7 @@ class CopyTestDelegate: NSObject, NSCopying {
         self.value = value
     }
     
-    @objc func copy(with: NSZone?) -> AnyObject {
+    @objc func copy(with: NSZone?) -> Any {
         return CopyTestDelegate(value: value)
     }
 }
