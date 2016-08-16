@@ -11,7 +11,7 @@ import Foundation
 /**
  *  `MulticastDelegate` lets you easily create a "multicast delegate" for a given protocol or class.
  */
-public class MulticastDelegate<T> {
+open class MulticastDelegate<T> {
 	
     /// The delegates hash table.
     private let delegates: NSHashTable<AnyObject>
