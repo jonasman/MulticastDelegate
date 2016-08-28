@@ -5,4 +5,3 @@ xcode_scheme: MulticastDelegateDemo
 xcode_sdk: iphonesimulator10.0
 notifications:
   email: false
-script: set -o pipefail && xcodebuild test -project MulticastDelegateDemo.xcodeproj -scheme MulticastDelegateDemo -sdk iphonesimulator10.0 | xcpretty
