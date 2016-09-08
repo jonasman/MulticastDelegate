@@ -6,4 +6,4 @@ xcode_sdk: iphonesimulator10.0
 notifications:
   email: false
 script:
- - xcodebuild -scheme 'MulticastDelegateDemo' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
+ - xcodebuild -scheme 'MulticastDelegateDemo' -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
