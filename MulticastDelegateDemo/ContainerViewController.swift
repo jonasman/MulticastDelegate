@@ -22,7 +22,7 @@ class ContainerViewController: UIViewController, DemoServiceDelegate {
 
 	
 	//MARK: DemoServiceDelegate
-	func gotYourData(value:String) {
+	func gotYourData(_ value:String) {
 		label.text = value
 	}
 	

@@ -1,8 +1,9 @@
 language: objective-c  
-osx_image: xcode7.3
+osx_image: xcode8
 xcode_project: MulticastDelegateDemo.xcodeproj 
 xcode_scheme: MulticastDelegateDemo
-xcode_sdk: iphonesimulator9.3
+xcode_sdk: iphonesimulator10.0
 notifications:
   email: false
-script: set -o pipefail && xcodebuild test -project MulticastDelegateDemo.xcodeproj -scheme MulticastDelegateDemo -sdk iphonesimulator9.3 | xcpretty
+script:
+ - xcodebuild -scheme 'MulticastDelegateDemo' -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c

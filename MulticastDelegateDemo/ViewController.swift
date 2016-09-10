@@ -22,13 +22,13 @@ class ViewController: UIViewController, DemoServiceDelegate {
 		dataService.delegate += self
 	}
 
-	@IBAction func getDataTapped(sender: AnyObject) {
+	@IBAction func getDataTapped(_ sender: AnyObject) {
 		dataService.getData("TestingMulticast")
 	}
 
 	
 	//MARK: DemoServiceDelegate
-	func gotYourData(value:String) {
+	func gotYourData(_ value:String) {
 		topLabel.text = value
 	}
 	

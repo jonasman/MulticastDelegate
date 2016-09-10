@@ -10,7 +10,7 @@ import Foundation
 
 protocol DemoServiceDelegate {
 	
-	func gotYourData(value:String)
+	func gotYourData(_ value:String)
 }
 
 class DemoService {
@@ -19,10 +19,10 @@ class DemoService {
 	
 	var delegate = MulticastDelegate<DemoServiceDelegate>()
 
-	func getData(value:String) {
+	func getData(_ value:String) {
 		
-		let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-		dispatch_after(delayTime, dispatch_get_main_queue()) { [unowned self] () -> Void in
+		let delayTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+		DispatchQueue.main.asyncAfter(deadline: delayTime) { [unowned self] () -> Void in
 			
 			self.delegate |> { delegate in
 				
