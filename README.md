@@ -12,7 +12,7 @@ Copy `MulticastDelegate.swift` to your project
 
 ####CocoaPods
 ```ruby
-	pod 'MulticastDelegateSwift', :git => 'https://github.com/jonasman/MulticastDelegate.git', :branch => 'master'
+	pod 'MulticastDelegateSwift'
 ```
 ####Swift Package Manager
 You can use [Swift Package Manager](https://swift.org/package-manager/) and specify a dependency in `Package.swift` by adding this:
