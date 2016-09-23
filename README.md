@@ -92,7 +92,7 @@ There are 3 operators to simplify the multicast usage
 
 Considerations
 ============
-The code is based on NSHashTable with weak objects, so you don't need to worry when a delegate is deallocated
+The code is based on HashTable with weak objects, so you don't need to worry when a delegate is deallocated
 
 Licence
 ============
