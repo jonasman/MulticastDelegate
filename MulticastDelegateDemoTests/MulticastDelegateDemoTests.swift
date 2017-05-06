@@ -284,4 +284,38 @@ class MulticastDelegateDemoTests: XCTestCase {
         XCTAssertFalse(multicastDelegate.containsDelegate(delegate))
     }
     
+    func testEmptyAfterCreation() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        
+        XCTAssertTrue(multicastDelegate.isEmpty)
+    }
+    
+    func testNotEmptyAfterAdd() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        multicastDelegate += DelegateTestClass()
+        
+        XCTAssertFalse(multicastDelegate.isEmpty)
+    }
+    
+    func testNotEmptyAfterDoubleAdd() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        multicastDelegate += DelegateTestClass()
+        multicastDelegate += DelegateTestClass()
+        
+        XCTAssertFalse(multicastDelegate.isEmpty)
+    }
+    
+    func testEmptyAfterAddAndDelete() {
+        
+        let multicastDelegate = MulticastDelegate<TestDelegate>()
+        let delegate = DelegateTestClass()
+        multicastDelegate += delegate
+        multicastDelegate -= delegate
+        
+        XCTAssertTrue(multicastDelegate.isEmpty)
+    }
+    
 }

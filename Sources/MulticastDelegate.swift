@@ -17,6 +17,15 @@ open class MulticastDelegate<T> {
     private let delegates: NSHashTable<AnyObject>
     
     /**
+     *  Use the property to check if no delegates are contained there.
+     *
+     *  - returns: `true` if there are no delegates at all, `false` if there is at least one.
+     */
+    public var isEmpty: Bool {
+        return delegates.count == 0
+    }
+    
+    /**
      *  Use this method to initialize a new `MulticastDelegate` specifying whether delegate references should be weak or
      *  strong.
      *
