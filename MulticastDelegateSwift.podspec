@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'MulticastDelegateSwift'
-  s.version  = '2.0.0'
+  s.version  = '2.0.1'
   s.platform = :ios, '8.0'
   s.license  = { :type => 'MIT'}
   s.summary  = 'Swift Multicast Delegate'
