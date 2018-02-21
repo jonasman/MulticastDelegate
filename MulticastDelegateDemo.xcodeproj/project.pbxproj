@@ -33,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00C0F00C203E1F960033F08F /* MulticastDelegate_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MulticastDelegate_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00C0F00C203E1F960033F08F /* MulticastDelegateSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MulticastDelegateSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C0F00E203E1F960033F08F /* MulticastDelegate_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MulticastDelegate_macOS.h; sourceTree = "<group>"; };
 		00C0F00F203E1F960033F08F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF010C431C3549E7001E396D /* MulticastDelegateSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MulticastDelegateSwift.podspec; sourceTree = SOURCE_ROOT; };
@@ -102,7 +102,7 @@
 			children = (
 				CF59E1CD1C318EAE002CB071 /* MulticastDelegateDemo.app */,
 				CF59E1E11C318EAE002CB071 /* MulticastDelegateDemoTests.xctest */,
-				00C0F00C203E1F960033F08F /* MulticastDelegate_macOS.framework */,
+				00C0F00C203E1F960033F08F /* MulticastDelegateSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 			);
 			name = "MulticastDelegate-macOS";
 			productName = "MulticastDelegate-macOS";
-			productReference = 00C0F00C203E1F960033F08F /* MulticastDelegate_macOS.framework */;
+			productReference = 00C0F00C203E1F960033F08F /* MulticastDelegateSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CF59E1CC1C318EAE002CB071 /* MulticastDelegateDemo */ = {
@@ -369,7 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "joao.MulticastDelegate-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = MulticastDelegateSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -408,7 +408,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "joao.MulticastDelegate-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = MulticastDelegateSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
