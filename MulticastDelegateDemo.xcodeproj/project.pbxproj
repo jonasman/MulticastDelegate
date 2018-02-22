@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C0F010203E1F960033F08F /* MulticastDelegate_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C0F00E203E1F960033F08F /* MulticastDelegate_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00C0F014203E1FC00033F08F /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */; };
 		CF59E1D11C318EAE002CB071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D01C318EAE002CB071 /* AppDelegate.swift */; };
 		CF59E1D31C318EAE002CB071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D21C318EAE002CB071 /* ViewController.swift */; };
@@ -34,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		00C0F00C203E1F960033F08F /* MulticastDelegateSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MulticastDelegateSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		00C0F00E203E1F960033F08F /* MulticastDelegate_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MulticastDelegate_macOS.h; sourceTree = "<group>"; };
 		00C0F00F203E1F960033F08F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF010C431C3549E7001E396D /* MulticastDelegateSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MulticastDelegateSwift.podspec; sourceTree = SOURCE_ROOT; };
 		CF59E1CD1C318EAE002CB071 /* MulticastDelegateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MulticastDelegateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +78,6 @@
 		00C0F00D203E1F960033F08F /* MulticastDelegate-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				00C0F00E203E1F960033F08F /* MulticastDelegate_macOS.h */,
 				00C0F00F203E1F960033F08F /* Info.plist */,
 			);
 			path = "MulticastDelegate-macOS";
@@ -147,16 +144,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C0F010203E1F960033F08F /* MulticastDelegate_macOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00C0F00B203E1F960033F08F /* MulticastDelegate-macOS */ = {
+		00C0F00B203E1F960033F08F /* MulticastDelegateSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00C0F013203E1F960033F08F /* Build configuration list for PBXNativeTarget "MulticastDelegate-macOS" */;
+			buildConfigurationList = 00C0F013203E1F960033F08F /* Build configuration list for PBXNativeTarget "MulticastDelegateSwift" */;
 			buildPhases = (
 				00C0F007203E1F960033F08F /* Sources */,
 				00C0F008203E1F960033F08F /* Frameworks */,
@@ -167,7 +163,7 @@
 			);
 			dependencies = (
 			);
-			name = "MulticastDelegate-macOS";
+			name = MulticastDelegateSwift;
 			productName = "MulticastDelegate-macOS";
 			productReference = 00C0F00C203E1F960033F08F /* MulticastDelegateSwift.framework */;
 			productType = "com.apple.product-type.framework";
@@ -247,7 +243,7 @@
 			targets = (
 				CF59E1CC1C318EAE002CB071 /* MulticastDelegateDemo */,
 				CF59E1E01C318EAE002CB071 /* MulticastDelegateDemoTests */,
-				00C0F00B203E1F960033F08F /* MulticastDelegate-macOS */,
+				00C0F00B203E1F960033F08F /* MulticastDelegateSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -558,7 +554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00C0F013203E1F960033F08F /* Build configuration list for PBXNativeTarget "MulticastDelegate-macOS" */ = {
+		00C0F013203E1F960033F08F /* Build configuration list for PBXNativeTarget "MulticastDelegateSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00C0F011203E1F960033F08F /* Debug */,

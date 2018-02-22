@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00C0F00B203E1F960033F08F"
-               BuildableName = "MulticastDelegate_macOS.framework"
-               BlueprintName = "MulticastDelegate-macOS"
+               BuildableName = "MulticastDelegateSwift.framework"
+               BlueprintName = "MulticastDelegateSwift"
                ReferencedContainer = "container:MulticastDelegateDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "00C0F00B203E1F960033F08F"
-            BuildableName = "MulticastDelegate_macOS.framework"
-            BlueprintName = "MulticastDelegate-macOS"
+            BuildableName = "MulticastDelegateSwift.framework"
+            BlueprintName = "MulticastDelegateSwift"
             ReferencedContainer = "container:MulticastDelegateDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "00C0F00B203E1F960033F08F"
-            BuildableName = "MulticastDelegate_macOS.framework"
-            BlueprintName = "MulticastDelegate-macOS"
+            BuildableName = "MulticastDelegateSwift.framework"
+            BlueprintName = "MulticastDelegateSwift"
             ReferencedContainer = "container:MulticastDelegateDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
