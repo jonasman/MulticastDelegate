@@ -47,7 +47,7 @@ protocol ServiceDelegate {
 
 class Service {
 	
-	var delegate = MulticastDelegate<TestDelegate>()
+	var delegate = MulticastDelegate<ServiceDelegate>()
 	
 	func fetchData() -> Bool {
 		// fetch Data and notify your delegates
@@ -64,9 +64,6 @@ class MainViewController: UIViewController, TestDelegate {
 	
 	func serviceGotData() {
 	    	// do nothing
-	}
-	func serviceGotData(value:Int) {
-		print(value)
 	}
 }
 ```
