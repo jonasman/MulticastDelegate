@@ -22,6 +22,7 @@ open class MulticastDelegate<T> {
      *  - returns: `true` if there are no delegates at all, `false` if there is at least one.
      */
     public var isEmpty: Bool {
+		
         return delegates.count == 0
     }
     
@@ -46,7 +47,8 @@ open class MulticastDelegate<T> {
      *  - returns: A new `MulticastDelegate` instance
      */
     public init(options: NSPointerFunctions.Options) {
-        delegates = NSHashTable(options: options, capacity: 0)
+		
+        delegates = NSHashTable<AnyObject>(options: options, capacity: 0)
     }
 	
     /**
@@ -57,6 +59,7 @@ open class MulticastDelegate<T> {
      *  - parameter delegate:  The delegate to be added.
      */
 	public func addDelegate(_ delegate: T) {
+		
 		delegates.add(delegate as AnyObject)
 	}
     
@@ -68,6 +71,7 @@ open class MulticastDelegate<T> {
      *  - parameter delegate:  The delegate to be removed.
      */
 	public func removeDelegate(_ delegate: T) {
+		
 		delegates.remove(delegate as AnyObject)
 	}
 	
@@ -93,6 +97,7 @@ open class MulticastDelegate<T> {
      *  - returns: `true` if the delegate is found or `false` otherwise
      */
     public func containsDelegate(_ delegate: T) -> Bool {
+		
         return delegates.contains(delegate as AnyObject)
     }
 }
