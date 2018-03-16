@@ -60,7 +60,7 @@ class Service {
 }
 ```    
 ```swift
-class MainViewController: UIViewController, TestDelegate {
+class MainViewController: UIViewController, ServiceDelegate {
 	
 	func serviceGotData() {
 	    	// do nothing
