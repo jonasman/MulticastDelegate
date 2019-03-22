@@ -23,7 +23,7 @@ open class MulticastDelegate<T> {
      */
     public var isEmpty: Bool {
 		
-        return delegates.count == 0
+        return delegates.allObjects.count == 0
     }
     
     /**
