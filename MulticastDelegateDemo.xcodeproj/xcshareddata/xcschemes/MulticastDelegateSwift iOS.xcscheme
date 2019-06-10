@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14D2230E22AE80FB00D2D871"
-               BuildableName = "MulticastDelegateSwift iOS.framework"
+               BlueprintIdentifier = "14D2231F22AE8A4500D2D871"
+               BuildableName = "MulticastDelegateSwift_iOS.framework"
                BlueprintName = "MulticastDelegateSwift iOS"
                ReferencedContainer = "container:MulticastDelegateDemo.xcodeproj">
             </BuildableReference>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "14D2230E22AE80FB00D2D871"
+            BuildableName = "MulticastDelegateSwift iOS2.framework"
+            BlueprintName = "MulticastDelegateSwift iOS2"
+            ReferencedContainer = "container:MulticastDelegateDemo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14D2230E22AE80FB00D2D871"
-            BuildableName = "MulticastDelegateSwift iOS.framework"
-            BlueprintName = "MulticastDelegateSwift iOS"
-            ReferencedContainer = "container:MulticastDelegateDemo.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14D2230E22AE80FB00D2D871"
-            BuildableName = "MulticastDelegateSwift iOS.framework"
-            BlueprintName = "MulticastDelegateSwift iOS"
-            ReferencedContainer = "container:MulticastDelegateDemo.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
