@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00C0F014203E1FC00033F08F /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */; };
 		14D2232422AE8A4500D2D871 /* MulticastDelegateSwift_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 14D2232222AE8A4500D2D871 /* MulticastDelegateSwift_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14D2232922AEB19800D2D871 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */; };
 		CF59E1D11C318EAE002CB071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D01C318EAE002CB071 /* AppDelegate.swift */; };
 		CF59E1D31C318EAE002CB071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D21C318EAE002CB071 /* ViewController.swift */; };
 		CF59E1D61C318EAE002CB071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59E1D41C318EAE002CB071 /* Main.storyboard */; };
@@ -348,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D2232922AEB19800D2D871 /* MulticastDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
