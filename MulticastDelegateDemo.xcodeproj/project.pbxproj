@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C0F014203E1FC00033F08F /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */; };
+		1A64112A236D812A00C097F1 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A641129236D812A00C097F1 /* Package.swift */; };
+		1A64112D236D821900C097F1 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A64112C236D821900C097F1 /* MulticastDelegate.swift */; };
 		CF59E1D11C318EAE002CB071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D01C318EAE002CB071 /* AppDelegate.swift */; };
 		CF59E1D31C318EAE002CB071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D21C318EAE002CB071 /* ViewController.swift */; };
 		CF59E1D61C318EAE002CB071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59E1D41C318EAE002CB071 /* Main.storyboard */; };
 		CF59E1D81C318EAE002CB071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF59E1D71C318EAE002CB071 /* Assets.xcassets */; };
 		CF59E1DB1C318EAE002CB071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59E1D91C318EAE002CB071 /* LaunchScreen.storyboard */; };
 		CF59E1E61C318EAE002CB071 /* MulticastDelegateDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1E51C318EAE002CB071 /* MulticastDelegateDemoTests.swift */; };
-		CF59E1F21C318EEC002CB071 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */; };
-		CF59E1F31C318EEC002CB071 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */; };
 		CF59E1F51C341526002CB071 /* DemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F41C341526002CB071 /* DemoService.swift */; };
 		CF59E1F61C341526002CB071 /* DemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F41C341526002CB071 /* DemoService.swift */; };
 		CF59E1F81C3419C1002CB071 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1F71C3419C1002CB071 /* ContainerViewController.swift */; };
@@ -34,6 +33,8 @@
 /* Begin PBXFileReference section */
 		00C0F00C203E1F960033F08F /* MulticastDelegateSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MulticastDelegateSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C0F00F203E1F960033F08F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A641129236D812A00C097F1 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		1A64112C236D821900C097F1 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		CF010C431C3549E7001E396D /* MulticastDelegateSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MulticastDelegateSwift.podspec; sourceTree = SOURCE_ROOT; };
 		CF59E1CD1C318EAE002CB071 /* MulticastDelegateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MulticastDelegateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF59E1D01C318EAE002CB071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		CF59E1E11C318EAE002CB071 /* MulticastDelegateDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MulticastDelegateDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF59E1E51C318EAE002CB071 /* MulticastDelegateDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegateDemoTests.swift; sourceTree = "<group>"; };
 		CF59E1E71C318EAE002CB071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		CF59E1F41C341526002CB071 /* DemoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoService.swift; sourceTree = "<group>"; };
 		CF59E1F71C3419C1002CB071 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,9 +83,18 @@
 			path = "MulticastDelegate-macOS";
 			sourceTree = "<group>";
 		};
+		1A64112B236D821900C097F1 /* MulticastDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1A64112C236D821900C097F1 /* MulticastDelegate.swift */,
+			);
+			path = MulticastDelegate;
+			sourceTree = "<group>";
+		};
 		CF59E1C41C318EAE002CB071 = {
 			isa = PBXGroup;
 			children = (
+				1A641129236D812A00C097F1 /* Package.swift */,
 				CF59E1F01C318EB8002CB071 /* Sources */,
 				CF59E1CF1C318EAE002CB071 /* MulticastDelegateDemo */,
 				CF59E1E41C318EAE002CB071 /* MulticastDelegateDemoTests */,
@@ -132,7 +141,7 @@
 		CF59E1F01C318EB8002CB071 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CF59E1F11C318EEC002CB071 /* MulticastDelegate.swift */,
+				1A64112B236D821900C097F1 /* MulticastDelegate */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -280,7 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C0F014203E1FC00033F08F /* MulticastDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A64112A236D812A00C097F1 /* Package.swift in Sources */,
 				CF59E1D31C318EAE002CB071 /* ViewController.swift in Sources */,
+				1A64112D236D821900C097F1 /* MulticastDelegate.swift in Sources */,
 				CF59E1D11C318EAE002CB071 /* AppDelegate.swift in Sources */,
 				CF59E1F81C3419C1002CB071 /* ContainerViewController.swift in Sources */,
 				CF59E1F51C341526002CB071 /* DemoService.swift in Sources */,
-				CF59E1F21C318EEC002CB071 /* MulticastDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +311,6 @@
 			files = (
 				CF59E1E61C318EAE002CB071 /* MulticastDelegateDemoTests.swift in Sources */,
 				CF59E1F61C341526002CB071 /* DemoService.swift in Sources */,
-				CF59E1F31C318EEC002CB071 /* MulticastDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
