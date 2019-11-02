@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A64112A236D812A00C097F1 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A641129236D812A00C097F1 /* Package.swift */; };
-		1A64112D236D821900C097F1 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A64112C236D821900C097F1 /* MulticastDelegate.swift */; };
+		1A64112E236D83A700C097F1 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A64112C236D821900C097F1 /* MulticastDelegate.swift */; };
 		CF59E1D11C318EAE002CB071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D01C318EAE002CB071 /* AppDelegate.swift */; };
 		CF59E1D31C318EAE002CB071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF59E1D21C318EAE002CB071 /* ViewController.swift */; };
 		CF59E1D61C318EAE002CB071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF59E1D41C318EAE002CB071 /* Main.storyboard */; };
@@ -296,12 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A64112A236D812A00C097F1 /* Package.swift in Sources */,
 				CF59E1D31C318EAE002CB071 /* ViewController.swift in Sources */,
-				1A64112D236D821900C097F1 /* MulticastDelegate.swift in Sources */,
 				CF59E1D11C318EAE002CB071 /* AppDelegate.swift in Sources */,
 				CF59E1F81C3419C1002CB071 /* ContainerViewController.swift in Sources */,
 				CF59E1F51C341526002CB071 /* DemoService.swift in Sources */,
+				1A64112E236D83A700C097F1 /* MulticastDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
